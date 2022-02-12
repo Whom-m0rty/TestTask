@@ -2,6 +2,7 @@
 
 <h3>Техническое задание:</h3>
 Есть JSON массив вида:
+
 ```json
 [{"Sensor_type": 10, "num": 0, "name": "N/A", "temperature": 20, "humidity": 25 }, 
 {"Sensor_type": 4, "num": 1, "name": "N/A"},
