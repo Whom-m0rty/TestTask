@@ -23,6 +23,7 @@
 {"Sensor_type": 4, "num": 17, "name": "N/A"},
 {"Sensor_type": 1, "num": 18, "name": "N/A", "temperature": 20},
 {"Sensor_type": 2, "num": 19, "name": "N/A", "humidity": 35 }]
+
 ```
 
 Где, Sensor_type – тип датчика <br>
@@ -184,6 +185,7 @@ humidity- влажность, измеряемая датчиком в проц�
         "humidity": 35
     }
 ]
+
 ```
 
 ##api/view/table/
