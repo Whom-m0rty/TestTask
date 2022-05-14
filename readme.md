@@ -1,10 +1,9 @@
-API DOC
+# API DOC
 разница между PUT и PATCH: https://ru.stackoverflow.com/questions/1070324/%D0%A0%D0%B0%D0%B7%D0%BD%D0%B8%D1%86%D0%B0-%D0%BE%D1%82%D0%BB%D0%B8%D1%87%D0%B8%D1%8F-%D0%BC%D0%B5%D0%B6%D0%B4%D1%83-put-%D0%B8-patch-%D0%B2-rest
-
-api/shop-bot-web/list/
-GET
+## api/shop-bot-web/list/
+### GET
 Возвращает список всякого говна что у нас есть на проекте
-
+```json
 {
     "Shop": [
         {
@@ -32,10 +31,11 @@ GET
         }
     ]
 }
-/api/shop/list/
-GET
+```
+## /api/shop/list/
+### GET
 Возвращает список магазинов в которых он модератор/админ
-
+```json
 [
     {
         "id": 2,
@@ -54,15 +54,19 @@ GET
         "is_owner": false
     }
 ]
-/api/shop/create/
-POST
-Создает новый магазин
-
+```
+## /api/shop/create/
+### POST
+Создает новый магазин <br><br>
 Запрос:
-
+```json
 {"title": "1231231"}
-Ответ:
+```
 
+
+
+Ответ:
+```json
 {
     "id": 7,
     "created_at": "2022-01-25T14:03:43.312264Z",
@@ -71,15 +75,20 @@ POST
     "is_owner": true,
     "title": "1231231"
 }
-/api/shop/update/{id}/
-GET
-Детальная информация о магазине.
+```
+---
+## /api/shop/update/{id}/
+### GET
+Детальная информация о магазине. 
 
-Если у пользователя недостаточно прав для редактирования:
+Если у пользователя недостаточно прав для редактирования:<br>
+```json
 {
     "detail": "Not found."
 }
+```
 Иначе:
+```json
 {
     "id": 2,
     "owner": 2,
@@ -88,14 +97,17 @@ GET
     "owner_username": "whom",
     "is_owner": true
 }
-PUT or PATCH
+```
+### PUT or PATCH
 Передача магазина другому пользователю.
-
+```json
 {"owner": 1}
-/api/bot/list/
-GET
+```
+---
+## /api/bot/list/
+### GET
 Список ботов привязанных к магазину
-
+```json
 [
     {
         "shop": 2,
@@ -108,10 +120,12 @@ GET
         "language_display": "Английский"
     },
 ]
-/api/bot/update/{id}/
-PATCH or PUT
+```
+---
+## /api/bot/update/{id}/
+### PATCH or PUT
 Используется для изменения принадлежности бота к магазину и настроек валюты и языка бота.
-
+```json
 {
     "shop": 2,
     "language": 1,
@@ -120,10 +134,12 @@ PATCH or PUT
     "display_item_out_of_stock": false,
     "display_item_quantity": false
 }
-/api/bot/create/
-POST
+```
+---
+## /api/bot/create/
+### POST
 Создание магазина(нужно заполнять поля при создании)
-
+```json
 {
     "shop": 2,
     "language": 1,
@@ -132,10 +148,14 @@ POST
     "display_item_out_of_stock": false,
     "display_item_quantity": false
 }
-api/category/list/{shop_id}/
-GET
-Extend - продолжает категорию Extend - null - корневая категория
+```
+---
+## api/category/list/{shop_id}/
+### GET
+Extend - продолжает категорию
+Extend - null - корневая категория
 
+```json
 [
     {
         "id": 3,
@@ -159,8 +179,10 @@ Extend - продолжает категорию Extend - null - корнева�
         "extend_title": null
     }
 ]
-api/category/update/{id}/
-PUT or PATCH
+```
+## api/category/update/{id}/
+### PUT or PATCH
+```json
 {
     "id": 3,
     "shop": 2,
@@ -168,12 +190,14 @@ PUT or PATCH
     "extend": 6,
     "extend_title": "12321312312 whom 12"
 }
-api/shop/{id}/charts/orders_amount/{delta}/
-GET
+```
+---
+## api/shop/{id}/charts/orders_amount/{delta}/
+### GET
 delta - может принимать значения: "day" / "month"
 
 Возвращает данные для highchart графика для оборота по заказам
-
+```json
 "chart_orders": {
 "dates_list":[
 "2021-09-04T09:09:09.034Z",
@@ -234,12 +258,15 @@ delta - может принимать значения: "day" / "month"
 ]
 }
 }
-api/shop/{id}/charts/orders/{delta}/
-GET
+```
+---
+## api/shop/{id}/charts/orders/{delta}/
+### GET
 delta - может принимать значения: "day" / "week" / "mouth"
 
 Возвращает данные для highchart графика для числа заказов
 
+```json
 {
 "chart_orders":{
 "dates_list":[
@@ -301,11 +328,17 @@ delta - может принимать значения: "day" / "week" / "mouth"
 ]
 }
 }
-/api/statistics/shop/{id}/
-GET
+```
+---
+## /api/statistics/shop/{id}/
+### GET
+```json
 {"paid_orders": 1, "sold_in_total": 2, "sold_for_a_total_of": "110"}
-api/order/last/{shop_id}/
-GET
+```
+
+## api/order/last/{shop_id}/
+### GET
+```json
 [
     {
         "id": 1,
@@ -320,8 +353,11 @@ GET
         "paid_at": "2021-08-03T23:03:09Z"
     }
 ]
-api/order/list/{shop_id}/
-GET
+```
+
+## api/order/list/{shop_id}/
+### GET
+```json
 [
     {
         "id": 1,
@@ -336,14 +372,21 @@ GET
         "paid_at": "2021-08-03T23:03:09Z"
     }
 ]
-api/user/me/
-GET
+```
+
+
+## api/user/me/
+### GET
+```json
 {
     "username_telegram": "whomLZT",
     "balance": 100.0
 }
-api/user/list/{bot_id}/
-GET
+```
+
+## api/user/list/{bot_id}/
+### GET
+```json
 [
     {
         "user": 2,
@@ -360,8 +403,11 @@ GET
         "is_active": true
     }
 ]
-api/product/list/<int:shop_id>/
-GET
+```
+
+## api/product/list/<int:shop_id>/
+### GET
+```json
 [
     {
         "id": 1,
@@ -376,8 +422,11 @@ GET
         "is_hidden": false
     }
 ]
-api/product/update/<int:product_id>/
-GET
+```
+
+## api/product/update/<int:product_id>/
+### GET
+```json
 {
     "id": 1,
     "title": "Тестовый товар",
@@ -388,3 +437,4 @@ GET
     "quantity": 1,
     "strings": "123"
 }
+```
