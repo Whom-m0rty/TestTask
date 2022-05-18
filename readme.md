@@ -454,24 +454,13 @@ delta - может принимать значения: "day" / "week" / "mouth"
 SUCCESS = (1, 'Success') <br>
 ERROR = (2, 'Error')
 ```json
-{
-  'count': 2, 
-  'next': None, 
-  'previous': None, 
-  'results': [
+[
     {
-        'id': 1, 
-        'title': '12312', 
-        'text': '3123213123', 
-        'type': 1, 
-        'created_at': '2022-05-18T19:31:56Z'
-    },
-    {
-        'id': 2, 
-        'title': '123213', 
-        'text': '23232323', 
-        'type': 2, 
-        'created_at': 
-        '2022-05-18T19:32:05Z',}
-]}
+        "id": 1,
+        "title": "123123323",
+        "text": "1231231231",
+        "type": 1,
+        "created_at": "2022-05-18T06:30:31.395661Z"
+    }
+]
 ```
