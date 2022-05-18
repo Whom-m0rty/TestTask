@@ -17,22 +17,25 @@
         }
     ],
     "Bot": [
-        {
-            "shop": 1,
-            "language": 1,
-            "title": "Новый бот",
-            "currency": 1,
-            "display_item_out_of_stock": false,
-            "display_item_quantity": false,
-            "currency_display": "Рубли ₽",
-            "language_display": "Русский",
-            "id": 1,
-            "shop_owner_username": "whom",
-            "is_owner": true,
-            "is_locked": false,
-            "created_at": "2022-05-18T06:16:18.280511Z",
-            "active_users": 0
-      }
+        [
+            {
+                "shop": 1,
+                "language": 1,
+                "title": "Новый бот",
+                "currency": 1,
+                "display_item_out_of_stock": false,
+                "display_item_quantity": false,
+                "currency_display": "Рубли ₽",
+                "language_display": "Русский",
+                "id": 1,
+                "shop_owner_username": "whom",
+                "is_owner": true,
+                "is_locked": false,
+                "created_at": "2022-05-18T06:16:18.280511Z",
+                "active_users": 0,
+                "all_users": 0
+            }
+        ]
     ]
 }
 ```
@@ -127,7 +130,8 @@
         "is_owner": true,
         "is_locked": false,
         "created_at": "2022-05-18T06:16:18.280511Z",
-        "active_users": 0
+        "active_users": 0,
+        "all_users": 0
     }
 ]
 ```
