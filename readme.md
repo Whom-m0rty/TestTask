@@ -27,8 +27,12 @@
             "currency_display": "Рубли ₽",
             "language_display": "Русский",
             "id": 1,
-            "shop_owner_username": "whom"
-        }
+            "shop_owner_username": "whom",
+            "is_owner": true,
+            "is_locked": false,
+            "created_at": "2022-05-18T06:16:18.280511Z",
+            "active_users": 0
+      }
     ]
 }
 ```
@@ -110,15 +114,21 @@
 ```json
 [
     {
-        "shop": 2,
-        "language": 2,
+        "shop": 1,
+        "language": 1,
         "title": "Новый бот",
-        "currency": 2,
-        "display_item_out_of_stock": true,
+        "currency": 1,
+        "display_item_out_of_stock": false,
         "display_item_quantity": false,
-        "currency_display": "USD $",
-        "language_display": "Английский"
-    },
+        "currency_display": "Рубли ₽",
+        "language_display": "Русский",
+        "id": 1,
+        "shop_owner_username": "whom",
+        "is_owner": true,
+        "is_locked": false,
+        "created_at": "2022-05-18T06:16:18.280511Z",
+        "active_users": 0
+    }
 ]
 ```
 ---
@@ -437,4 +447,31 @@ delta - может принимать значения: "day" / "week" / "mouth"
     "quantity": 1,
     "strings": "123"
 }
+```
+
+## api/notifications/list/
+### GET
+SUCCESS = (1, 'Success') <br>
+ERROR = (2, 'Error')
+```json
+{
+  'count': 2, 
+  'next': None, 
+  'previous': None, 
+  'results': [
+    {
+        'id': 1, 
+        'title': '12312', 
+        'text': '3123213123', 
+        'type': 1, 
+        'created_at': '2022-05-18T19:31:56Z'
+    },
+    {
+        'id': 2, 
+        'title': '123213', 
+        'text': '23232323', 
+        'type': 2, 
+        'created_at': 
+        '2022-05-18T19:32:05Z',}
+]}
 ```
